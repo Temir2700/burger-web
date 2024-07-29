@@ -1,24 +1,24 @@
 body {
-    background-color: #000;
-    background-image: url('../src/assets/main_bg.png');
-    background-repeat: no-repeat;
-    background-size: 100%;
+  background-color: #000;
+  background-image: url("../src/assets/main_bg.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 .navbar-left {
-    margin-right: 50px;
+  margin-right: 50px;
 }
 .nav-link {
-    text-align: center;
+  text-align: center;
 }
 .nav-link img {
-    width: 100px;
-    height: 60px;
+  width: 100px;
+  height: 60px;
 }
 .centered-nav {
-    display: flex;
-    justify-content: center; /* Centers flex items horizontally */
+  display: flex;
+  justify-content: center; /* Centers flex items horizontally */
 }
 .navbar-nav {
-    align-items: center;
-    gap: 10px;
+  align-items: center;
+  gap: 10px;
 }
