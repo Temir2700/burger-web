@@ -40,49 +40,49 @@ const DishForm: React.FC<Props> = ({onSumbit, existingDish = initialState, isEdi
 
     return (
         <form onSubmit={onFormSubmit}>
-            <h4>{isEdit ? 'Edit dish' : 'Add new dish'}</h4>
-            <div className="form-group">
-                <label htmlFor="name">Name</label>
+            <h4 className="text-center text-white text-uppercase">{isEdit ? 'Edit burger' : 'Add new burger'}</h4>
+            <div className="form-group mb-2">
+                <label className='mb-2 text-white' htmlFor="name">Name</label>
                 <input
                     type="text"
                     name="name"
                     id="name"
-                    className="form-control"
+                    className="form-control bg-dark border-0 text-white"
                     value={newDish.name}
                     onChange={dishChange}
                 />
             </div>
 
-            <div className="form-group">
-                <label htmlFor="description">Description</label>
+            <div className="form-group mb-2">
+                <label className='mb-2 text-white' htmlFor="description">Description</label>
                 <textarea
                     name="description"
                     id="description"
-                    className="form-control"
+                    className="form-control bg-dark border-0 text-white"
                     value={newDish.description}
                     onChange={dishChange}
                 />
             </div>
 
-            <div className="form-group">
-                <label htmlFor="image">Image</label>
+            <div className="form-group mb-2">
+                <label className='mb-2 text-white' htmlFor="image">Image link</label>
                 <input
                     type="url"
                     name="image"
                     id="image"
-                    className="form-control"
+                    className="form-control bg-dark border-0 text-white"
                     value={newDish.image}
                     onChange={dishChange}
                 />
             </div>
 
-            <div className="form-group mb-3">
-                <label htmlFor="price">Price</label>
+            <div className="form-group mb-4 text-white">
+                <label className='mb-2' htmlFor="price">Price</label>
                 <input
                     type="number"
                     name="price"
                     id="price"
-                    className="form-control"
+                    className="form-control bg-dark border-0 text-white"
                     value={newDish.price}
                     onChange={dishChange}
                 />

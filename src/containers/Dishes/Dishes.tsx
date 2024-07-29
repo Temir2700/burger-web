@@ -18,7 +18,7 @@ const Dishes = () => {
         await dispatch(fetchDishes());
     };
 
-    let dishes: React.ReactNode = <Spinner/>;
+    let dishes: React.ReactNode = <div className="text-center"><Spinner/></div>;
 
     if(!dishesLoading) {
         dishes = items.map((item: IDish) => (
@@ -37,7 +37,7 @@ const Dishes = () => {
 
     return (
         <>
-            <h4>Dishes</h4>
+            <h3 className="text-center text-white mb-4 text-uppercase">Menu</h3>
             {dishes}
         </>
     );

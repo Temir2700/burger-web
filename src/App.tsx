@@ -9,6 +9,7 @@ import EditDish from "./containers/EditDish/EditDish";
 
 import './App.css';
 import Cart from './containers/Cart/Cart';
+import AllOrders from './containers/Order/AllOrders';
 
 const App = () => {
 
@@ -22,13 +23,16 @@ const App = () => {
                   <Route path="/" element={(
                       <Home/>
                   )}/>
+                  <Route path="/admin" element={(
+                      <Home/>
+                  )}/>
                   <Route path="/cart" element={(
                     <Cart />
                   )}/>
-                  <Route path="/new-dish" element={(
+                  <Route path="/admin/new-dish" element={(
                       <NewDish/>
                   )}/>
-
+                  <Route path="/admin/orders" element={(<AllOrders />)} />
                   <Route path="checkout" element={(
                       <Checkout/>
                   )}>
@@ -37,7 +41,7 @@ const App = () => {
                       )}/>
                   </Route>
 
-                  <Route path="/edit-dish/:id" element={(
+                  <Route path="/admin/edit-dish/:id" element={(
                       <EditDish/>
                   )}/>
                   <Route path="*" element={(

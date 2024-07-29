@@ -20,7 +20,7 @@ const EditDish = () => {
 
     const onSubmit = async (dish: TApiDish) => {
         await dispatch(updateDish({id, dish}));
-        navigate('/');
+        navigate('/admin');
     };
 
     useEffect(() => {

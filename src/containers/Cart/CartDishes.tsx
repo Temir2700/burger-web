@@ -17,12 +17,12 @@ const CartDishes: React.FC<IProps> = ({cartDishes}) => {
                 return <CartItem key={oneCartDish.dish.id} cartsDish={oneCartDish}/>;
             })}
 
-            <div className="card border-0 p-2">
+            <div className="card border-0 p-2 mt-2 mb-4 bg-dark">
                 <div className="row">
-                    <div className="col text-right">
+                    <div className="col text-right text-white">
                         Total:
                     </div>
-                    <div className="col-3 text-end">
+                    <div className="col-3 text-end text-white">
                         <strong>{sum}</strong> KGS
                     </div>
                 </div>

@@ -3,8 +3,8 @@ import {ICustomer, IOrderData} from "../../types";
 import axiosApi from "../../axiosApi";
 import {useNavigate} from "react-router-dom";
 import Spinner from "../../components/Spinner/Spinner";
-import {useAppSelector} from "../../app/hook";
-import {selectorCartDishes} from "../../store/cartSlice";
+import {useAppDispatch, useAppSelector} from "../../app/hook";
+import {clearCart, selectorCartDishes} from "../../store/cartSlice";
 
 const Order= () => {
     const navigate = useNavigate();
@@ -14,6 +14,7 @@ const Order= () => {
         phone: '',
     });
     const [loading, setLoading] = useState(false);
+    const dispatch = useAppDispatch();
     const cartDishes = useAppSelector(selectorCartDishes);
     const onFormSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
@@ -26,6 +27,7 @@ const Order= () => {
 
         try{
             await axiosApi.post('/orders.json', data);
+            dispatch(clearCart());
         }  finally {
             setLoading(false);
             navigate('/');
@@ -44,38 +46,40 @@ const Order= () => {
     let form = (
         <form onSubmit={onFormSubmit}>
             <div className="form-group">
-                <label htmlFor="name">Client name</label>
+                <label htmlFor="name" className="mb-2 text-white">Client name</label>
                 <input
                     id="name" type="text"
                     name="name"
-                    className="form-control"
+                    className="form-control bg-dark border-0 mb-2"
                     value={customer.name}
                     onChange={customerChanged}
                 />
             </div>
             <div className="form-group">
-                <label htmlFor="address">Address</label>
+                <label htmlFor="address" className="mb-2 text-white">Address</label>
                 <input
                     id="address" type="text"
                     name="address"
-                    className="form-control"
+                    className="form-control bg-dark border-0 mb-2"
                     value={customer.address}
                     onChange={customerChanged}
                 />
             </div>
             <div className="form-group mb-3">
-                <label htmlFor="phone">Phone</label>
+                <label htmlFor="phone" className="mb-2 text-white">Phone</label>
                 <input
                     id="phone" type="text"
                     name="phone"
-                    className="form-control"
+                    className="form-control bg-dark border-0 mb-4"
                     value={customer.phone}
                     onChange={customerChanged}
                 />
             </div>
-            <button type="submit" className="btn btn-primary">
+            <div className="d-flex align-center justify-content-center">
+             <button type="submit" className="btn btn-danger">
                 Place order
-            </button>
+            </button>   
+            </div>
         </form>
     );
 

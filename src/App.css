@@ -1,3 +1,9 @@
+body {
+    background-color: #000;
+    background-image: url('../src/assets/main_bg.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
 .navbar-left {
     margin-right: 50px;
 }
@@ -5,8 +11,8 @@
     text-align: center;
 }
 .nav-link img {
-    width: 110px;
-    height: 50px;
+    width: 100px;
+    height: 60px;
 }
 .centered-nav {
     display: flex;
